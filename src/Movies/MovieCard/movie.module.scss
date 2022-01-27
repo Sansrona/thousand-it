@@ -1,0 +1,35 @@
+.movieCard {
+    .image_rating {
+        position: relative;
+        margin-bottom: 30px;
+
+        .circleProgress {
+            position: absolute;
+            top: 90%;
+        }
+    }
+    .movieName {
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 360px) {
+    .image {
+        width: 67%;
+        padding-left: 16%;
+    }
+    .circleProgress {
+        left: 80px;
+    }
+}
+
+@media (max-width: 415px) {
+    .image {
+        width: 60%;
+        padding-left: 20%;
+    }
+    .circleProgress {
+        left: 80px;
+    }
+}
+

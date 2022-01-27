@@ -1,0 +1,134 @@
+.moviePage {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    .list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin-bottom: 10px;
+        :first-child {
+            border-bottom: 2px solid aqua;
+        }
+        &_item {
+            margin-right: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding-bottom: 5px;
+            &:hover {
+                border-bottom: 2px solid aqua;
+            }
+        }
+    }
+    .movieBlock {
+        display: flex;
+        .image {
+            padding: 7% 5%;
+        }
+        .data {
+            color: white;
+            .title {
+                margin: 0;
+                padding-top: 8px;
+                margin-bottom: 5px;
+            }
+            .original_title {
+                margin-bottom: 5px;
+            }
+            .tagline {
+                @extend .original_title;
+            }
+            .votes {
+                display: flex;
+                align-items: center;
+            }
+            .production {
+                margin-bottom: 7px;
+                .productionCompany {
+                    margin-bottom: 2px;
+                }
+                .productionBudget {
+                    @extend .productionCompany;
+                }
+            }
+            .overview {
+                padding-top: 5px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .movieBlock {
+        width: 65% !important;
+        display: flex;
+    }
+}
+
+@media (max-width: 1030px) {
+    .movieBlock {
+        .productionCompany {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1110px) {
+    .movieBlock {
+        .releaseDate {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .movieBlock {
+        display: flex;
+        flex-direction: column;
+        height: 72em !important;
+        .data {
+            padding-left: 20px;
+            .title {
+                padding-top: 0 !important;
+                margin-bottom: 5px;
+            }
+            .original_title {
+                margin-bottom: 5px;
+            }
+            .releaseDate {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .production {
+                margin-bottom: 8px;
+                .productionCompany {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+            .overview {
+                font-size: 15px !important;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 415px) {
+    .movieBlock {
+        width: 80% !important;
+        height: max-content !important;
+        .data {
+            padding-left: 10px !important;
+            .title {
+                margin-bottom: 8px !important;
+            }
+            .votes {
+                padding-top: 8px;
+            }
+        }
+    }
+}
