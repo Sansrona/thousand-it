@@ -7,7 +7,7 @@ const Trending = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [fetching, setFetching] = useState(true);
     const [totalCount, setTotalCount] = useState(0);
-
+    console.log(movies.length, totalCount);
     useEffect(() => {
         if (fetching) {
             moviesAPI.getTopRatedMovies(currentPage)
@@ -29,8 +29,7 @@ const Trending = () => {
     }, [])
 
     const handleScroll = (e) => {
-        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100 && 
-        movies.length < totalCount) {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
             setFetching(true)
         }
     }
